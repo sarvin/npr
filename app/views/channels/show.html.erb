@@ -1,18 +1,19 @@
 <h1><%= @channel.name %></h1>
 <% @hash['list']['story'].each do |story| -%>
-	<% if story['song'] %>
-		<p><%= image_tag "http://www.npr.org/#{story['song'][0]['album']['coverUrl']['$text']}", width: '100'%><br>
-		<ul>
-			<% story['audio'].each do |audio| %>
-				<% if audio['title'] and audio['format']['mp3'] %>
-					<% audio['format']['mp3'].each do |format| %>
-						<% if format['type'] == 'mp3' %>
-							<li><%= link_to audio['title']['$text'], format['$text'] %></li>
-						<% end %>
-					<% end %>
-				<% end %>
-			<% end %>
-		</ul>
-		<%= link_to 'View on NPR', story['link'][0]['$text'] %><br>
-	<% end %>
+  <% if story['song'] %>
+    <p><%= image_tag "http://www.npr.org/#{story['song'][0]['album']['coverUrl']['$text']}", width: '100'%><br>
+    <ul>
+      <% story['audio'].each do |audio| %>
+        <% if audio['title'] and audio['format']['mp3'] %>
+          <% audio['format']['mp3'].each do |format| %>
+            <% if format['type'] == 'mp3' %>
+              <li><%= audio_tag(format['$text'], autoplay: false, controls: true) %></li>
+              <li><%= link_to audio['title']['$text'], format['$text'] %></li>
+            <% end %>
+          <% end %>
+        <% end %>
+      <% end %>
+    </ul>
+    <%= link_to 'View on NPR', story['link'][0]['$text'] %><br>
+  <% end %>
 <%- end %>
