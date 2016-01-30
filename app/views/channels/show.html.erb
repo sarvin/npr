@@ -7,8 +7,8 @@
         <% if audio['title'] and audio['format']['mp3'] %>
           <% audio['format']['mp3'].each do |format| %>
             <% if format['type'] == 'mp3' %>
-              <li><%= audio_tag(format['$text'], autoplay: false, controls: true) %></li>
               <li><%= link_to audio['title']['$text'], format['$text'] %></li>
+              <li><%= audio_tag(format['$text'], autoplay: false, controls: true, title: audio['title']['$text']) %></li>
             <% end %>
           <% end %>
         <% end %>
