@@ -7,6 +7,7 @@ module NPR
 
   def self.get_latest(channel)
     url = generate_url(channel.api_id)
+    Rails.logger.debug 'URL used to generte query: ' + url
     buffer = open(url).read
     hash = JSON.parse buffer
   end
@@ -17,7 +18,8 @@ module NPR
       query: {
         id: api_id,
         apiKey: Rails.configuration.x.api_key,
-        output: FORMAT
+        output: FORMAT,
+        requiredAssets: 'audio'
       }
     }).to_s
   end
