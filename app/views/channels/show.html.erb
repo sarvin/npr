@@ -1,19 +1,33 @@
 <h1><%= @channel.name %></h1>
+
+<div class="row">
+
 <% @hash['list']['story'].each do |story| -%>
   <% if story['song'] %>
-    <p><%= image_tag "http://www.npr.org/#{story['song'][0]['album']['coverUrl']['$text']}", width: '100'%><br>
-    <ul>
-      <% story['audio'].each do |audio| %>
-        <% if audio['title'] and audio['format']['mp3'] %>
-          <% audio['format']['mp3'].each do |format| %>
-            <% if format['type'] == 'mp3' %>
-              <li><%= link_to audio['title']['$text'], format['$text'] %></li>
-              <li><%= audio_tag(format['$text'], autoplay: false, controls: true, title: audio['title']['$text']) %></li>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+    <div class="music-box">
+      <p><%= image_tag "http://www.npr.org/#{story['song'][0]['album']['coverUrl']['$text']}", width: '250'%></p>
+        <ul>
+          <% story['audio'].each do |audio| %>
+            <% if audio['title'] and audio['format']['mp3'] %>
+              <% audio['format']['mp3'].each do |format| %>
+                <% if format['type'] == 'mp3' %>
+                  <li>
+                    <div class="song-title"><%= link_to audio['title']['$text'], format['$text'] %></div>
+                    <div class="audio-player"><%= audio_tag(format['$text'], autoplay: false, controls: true, title: audio['title']['$text']) %></div>
+                  </li>
+                <% end %>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
-      <% end %>
-    </ul>
-    <%= link_to 'View on NPR', story['link'][0]['$text'] %><br>
+        </ul>
+        <br />
+       <button type="button" class="btn btn-default btn-lg btn-block">
+       	<%= link_to 'View on NPR', story['link'][0]['$text'] %>
+       </button>
+       </div><!-- end .music-box -->
+    </div>
   <% end %>
 <%- end %>
+
+</div><!-- end row -->

@@ -1,6 +1,21 @@
 <h1>Channels#index</h1>
-<ul>
-	<% @channels.each do |channel| -%>
-		<li><%= link_to channel.name, channel_path(channel) %></li>
-	<%- end %>
-</ ul>
+
+<div class="row">
+
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    
+    <div class="index-box">
+    
+      <ul>
+	    <% @channels.each do |channel| -%>
+		  <li><%= link_to channel.name, channel_path(channel) %></li>
+		  <li><%= link_to channel.name, channel_path(channel) %></li>
+		  <li><%= link_to channel.name, channel_path(channel) %></li>
+	    <%- end %>
+      </ ul>
+    
+    </div><!-- end index-box -->
+
+  </div><!-- end cols -->
+
+</div><!-- end row -->

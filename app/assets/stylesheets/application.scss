@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
 $body-bg: #ecf0f1;
-$font-family-sans-serif: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family: Helvetica, Arial, sans-serif;
 $navbar-height: 45px;
 $navbar-default-bg: white;
 $navbar-default-brand-color: #556b2f;
@@ -47,5 +47,113 @@ $jumbotron-bg: white;
     color: #5cb85c;
 }
 
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+// jefrey's css
+
+.npr-red {
+	color: #ee3a23;
+}
+
+.npr-black {
+	color: #060709;
+}
+
+.npr-blue {
+	color: #4067b2;
+}
+
+header {
+	background-color: #fff;
+	height: 200px;
+}
+
+header h1{
+	font-size:36px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+footer {
+	background-color: #fff;
+	height: 200px;
+}
+
+h1{
+	font-size:48px;
+	margin:30px 0 30px 0;
+}
+
+// index css
+
+.index-box{
+	padding: 15px;
+	margin-bottom: 40px;
+	background-color: #fff;
+	border-top: 5px solid #4067b2;
+}
+
+.index-box ul{
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0 0 0 0;
+	text-align:left;
+}
+
+.index-box li a{
+	display:block;
+	background-color:#060709;
+	color:#fff;
+	font-size: 24px;
+	font-weight: bold;
+	padding:20px;
+	margin:10px 0 10px 0;
+}
+
+.index-box li a:hover{
+	display:block;
+	background-color:#4067b2;
+	text-decoration: none;
+}
+
+
+// show css
+
+.music-box{
+	padding: 15px;
+	text-align: center;
+	margin-bottom: 40px;
+	background-color: #fff;
+	-webkit-border-radius: 0px 0px 10px 10px;
+	-moz-border-radius: 0px 0px 10px 10px;
+	border-radius: 0px 0px 10px 10px;
+	border-top: 5px solid #4067b2;
+}
+
+.music-box img{
+	margin-bottom:30px;
+}
+
+.music-box ul{
+	list-style-type: none;
+	margin: 0 auto;
+	padding: 0 0 0 0;
+}
+.music-box li{
+	line-height: 45px;
+}
+.music-box li .song-title a{
+	display: block;
+	font-size: 14px;
+	color: #060709;
+	text-decoration: none;
+	line-height: 16px;
+	margin-bottom: 5px;
+}
+.music-box li .song-title a:hover{
+	color: #4067b2;
+}
