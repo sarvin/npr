@@ -1,12 +1,12 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
-$body-bg: #ecf0f1;
+$body-bg: #e0e0e0;
 $font-family: Helvetica, Arial, sans-serif;
 $navbar-height: 45px;
-$navbar-default-bg: white;
+$navbar-default-bg: #fff;
 $navbar-default-brand-color: #556b2f;
 $brand-primary: #556b2f;
-$jumbotron-bg: white;
+$jumbotron-bg: #fff;
 
 .bs-callout {
     padding: 20px;
@@ -68,23 +68,106 @@ $jumbotron-bg: white;
 	color: #4067b2;
 }
 
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #060709;
+    background-color: #e0e0e0;
+}
+
+a{
+	color: #4067b2;
+	text-decoration: none;
+}
+a:hover, a:active{
+	color: #060709;
+	text-decoration: none;
+}
+
+audio {
+    display: inline-block;
+    vertical-align: baseline;
+    width: 250px;
+}
+
 header {
 	background-color: #fff;
 	height: 200px;
 }
 
 header h1{
-	font-size:36px;
-	margin-top: 20px;
-	margin-bottom: 10px;
+	display: inline-block;
+	margin:30px 0 30px 0;
+	width:373px;
+	height:40px;
+}
+header h1 a{
+	text-indent:-9999px;
+	display:block;
+	background-color:transparent;
+	background-image:url(npr-o-matic_logo.png);
+	background-size: 373px 40px;
+    background-position: 0 0;
+    background-repeat:no-repeat;
 }
 
-footer {
+nav{
+	position: absolute;
+    top: 160px;
+}
+
+nav ul{
+	list-style-type: none;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-align:left;
+}
+nav li{
+	display: inline-block;
+    margin-right: 15px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    font-weight:bold;
+}
+nav li a{
+	padding-bottom:10px;
+}
+nav li a:hover{
+	border-bottom:5px solid #ee3a23;
+}
+
+footer{
 	background-color: #fff;
-	height: 200px;
+	text-align:left;
+	color:#777;
+	padding:50px 0 50px 0;
 }
 
-h1{
+footer p{
+	font-size:14px;
+	line-height:22px;
+}
+
+ul.footer-nav{
+	list-style-type: none;
+	text-align:left;
+	padding:0 0 0 0;
+}
+ul.footer-nav li{
+	display:inline-block;
+	margin-right:10px;
+	text-transform: lowercase;
+}
+.footer-byline{
+	margin:50px 0 0 0;
+	font-size:10px;
+	line-height:14px;
+	text-align:left;
+}
+
+h2{
 	font-size:48px;
 	margin:30px 0 30px 0;
 }
@@ -113,10 +196,12 @@ h1{
 	font-weight: bold;
 	padding:20px;
 	margin:10px 0 10px 0;
+	letter-spacing: 1px;
+    text-transform: lowercase;
 }
 
-.index-box li a:hover{
-	display:block;
+.index-box li a:hover, .index-box li a:active{
+	color:#fff;
 	background-color:#4067b2;
 	text-decoration: none;
 }
@@ -159,4 +244,47 @@ h1{
 	color: #4067b2;
 }
 
+@media screen and (max-width: 500px) {
+	nav{
+		display: none;
+	}
+	
+	ul.footer-nav{
+		list-style-type: none;
+		text-align:center;
+		padding:0 0 0 0;
+	}
+	ul.footer-nav li{
+		display:block;
+	}
+	ul.footer-nav li a{
+		display:block;
+		background-color:#e0e0e0;
+		color:#222;
+		font-size: 14px;
+		font-weight: bold;
+		padding:10px;
+		margin:5px 0 5px 0;
+    	text-transform: lowercase;
+	}
+	ul.footer-nav li a:hover{
+		background-color:#4067b2;
+		color:#fff;
+	}
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 4/2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2)
+     {
+        header h1 a{
+			display: block;
+			text-indent:-9999px;
+			background-color:transparent;
+			background-image:url(npr-o-matic_logo@2x.png);
+			background-size: 374px 40px;
+            background-position: 0 0;
+		}       
+	}
 
