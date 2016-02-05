@@ -10,6 +10,7 @@ module NPR
     Rails.logger.debug 'URL used to generate query: ' + url
     buffer = open(url).read
     hash = JSON.parse buffer
+    #hash = JSON.parse(buffer, {:symbolize_names => true})
   end
 
   def self.generate_url(api_id)
