@@ -1,11 +1,20 @@
 <h2><%= @channel.name %></h2>
 
 <div class="row">
-<% @hash['list']['story'].each_with_index do |story, index| -%>
+<%- index = 0 -%>
+<% @hash['list']['story'].each do |story| -%>
   <% next unless story['song'] %>
+  <%- index += 1 -%>
   <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="music-box">
-      <p><%= image_tag "http://www.npr.org/#{story['song'][0]['album']['coverUrl']['$text']}", width: '250'%></p>
+      <p><%= story['song'][0]['album']['albumArtist']['$text'] %></p>
+      <% if story['song'][0]['album']['coverUrl']['$text'] and story['song'][0]['album']['coverUrl']['$text'] != 'N/A'%>
+        <p><%= image_tag "http://www.npr.org/#{story['song'][0]['album']['coverUrl']['$text']}", width: '250'%></p>
+      <% elsif story['image'][0]['src'] %>
+        <p><%= image_tag "#{story['image'][0]['src']}", width: '250'%></p>
+      <% elsif story['thumbnail']['large']['$text'] %>
+        <p><%= image_tag "#{story['thumbnail']['large']['$text']}", width: '250'%></p>
+      <% end %>
       <ul>
         <% story['audio'].each do |audio| %>
           <% next unless audio['title'] and audio['format']['mp3'] %>
@@ -22,10 +31,10 @@
       <%= link_to 'View on NPR', story['link'][0]['$text'], class:'btn btn-default btn-lg btn-block', role:'button', target:'_blank' %>
     </div><!-- end .music-box -->
   </div>
-  <%- if (index + 1).modulo(2).zero? %>
+  <%- if index.modulo(2).zero? %>
     <div class="clearfix visible-sm-block"></div>
   <% end %>
-  <%- if (index + 1).modulo(3).zero? %>
+  <%- if index.modulo(3).zero? %>
     <div class="clearfix visible-md-block visible-lg-block"></div>
   <%- end %>
 <%- end %>
