@@ -19,9 +19,7 @@
         <% end %>
       </ul>
       <br />
-      <button type="button" class="btn btn-default btn-lg btn-block">
-        <%= link_to 'View on NPR', story['link'][0]['$text'] %>
-      </button>
+      <%= link_to 'View on NPR', story['link'][0]['$text'], class:'btn btn-default btn-lg btn-block', role:'button', target:'_blank' %>
     </div><!-- end .music-box -->
   </div>
   <%- if (index + 1).modulo(2).zero? %>
