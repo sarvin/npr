@@ -41,4 +41,7 @@ Rails.application.configure do
 
   # set default url for development environment
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # https://github.com/rails/web-console#configuration
+  config.web_console.whitelisted_ips = '10.0.2.2'
 end
