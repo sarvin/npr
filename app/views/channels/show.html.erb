@@ -6,23 +6,29 @@
   <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="music-box">
       <p><%= image_tag "http://www.npr.org/#{story['song'][0]['album']['coverUrl']['$text']}", width: '250'%></p>
-        <ul>
-          <% story['audio'].each do |audio| %>
-            <% next unless audio['title'] and audio['format']['mp3'] %>
-            <% audio['format']['mp3'].each do |format| %>
-              <% next unless format['type'] == 'mp3' %>
-              <li>
-                <div class="song-title"><%= link_to audio['title']['$text'], format['$text'] %></div>
-                <div class="audio-player"><%= audio_tag(format['$text'], autoplay: false, controls: true, title: audio['title']['$text']) %></div>
-              </li>
-            <% end %>
+      <ul>
+        <% story['audio'].each do |audio| %>
+          <% next unless audio['title'] and audio['format']['mp3'] %>
+          <% audio['format']['mp3'].each do |format| %>
+            <% next unless format['type'] == 'mp3' %>
+            <li>
+              <div class="song-title"><%= link_to audio['title']['$text'], format['$text'] %></div>
+              <div class="audio-player"><%= audio_tag(format['$text'], autoplay: false, controls: true, title: audio['title']['$text']) %></div>
+            </li>
           <% end %>
-        </ul>
-        <br />
+        <% end %>
+      </ul>
+      <br />
       <button type="button" class="btn btn-default btn-lg btn-block">
         <%= link_to 'View on NPR', story['link'][0]['$text'] %>
       </button>
     </div><!-- end .music-box -->
   </div>
+  <%- if (index + 1).modulo(2).zero? %>
+    <div class="clearfix visible-sm-block"></div>
+  <% end %>
+  <%- if (index + 1).modulo(3).zero? %>
+    <div class="clearfix visible-md-block visible-lg-block"></div>
+  <%- end %>
 <%- end %>
 </div><!-- end row -->
