@@ -245,6 +245,27 @@ h2{
 }
 
 @media screen and (max-width: 500px) {
+	header {
+		height: 100px;
+	}
+
+	header h1{
+		display: block;
+    	margin: 37px auto 30px auto;
+    	width: 250px;
+    	height: 27px;
+    	text-align: center;
+	}
+	header h1 a{
+		text-indent:-9999px;
+		display:block;
+		background-color:transparent;
+		background-image:url(npr-o-matic_logo_sm.png);
+		background-size: 250px 27px;
+    	background-position: 0 0;
+    	background-repeat:no-repeat;
+}
+	
 	nav{
 		display: none;
 	}
@@ -271,6 +292,10 @@ h2{
 		background-color:#4067b2;
 		color:#fff;
 	}
+	h2{
+		font-size:30px;
+		margin:25px 0 25px 0;
+	}
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -279,12 +304,7 @@ h2{
     only screen and (min-device-pixel-ratio: 2)
      {
         header h1 a{
-			display: block;
-			text-indent:-9999px;
-			background-color:transparent;
 			background-image:url(npr-o-matic_logo@2x.png);
-			background-size: 374px 40px;
-            background-position: 0 0;
 		}       
 	}
 
