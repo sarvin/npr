@@ -7,7 +7,7 @@ module NPR
 
   def self.get_latest(channel)
     url = generate_url(channel.api_id)
-    Rails.logger.debug 'URL used to generte query: ' + url
+    Rails.logger.debug 'URL used to generate query: ' + url
     buffer = open(url).read
     hash = JSON.parse buffer
   end
