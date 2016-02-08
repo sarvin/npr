@@ -91,6 +91,27 @@ audio {
     width: 250px;
 }
 
+.alert {
+    padding: 15px;
+    margin: 20px 0 20px 0;
+    border: none;
+    border-radius: 0;
+    background-color:#ee3a23;
+}
+.alert ul{
+	list-style-type: none;
+	margin: 0 0 0 0;
+	padding: 0 40px 0 0;
+	text-align:left;
+}
+.alert ul li{
+	font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: 0.3;
+}
+
 header {
 	background-color: #fff;
 	height: 200px;
@@ -170,6 +191,14 @@ ul.footer-nav li{
 h2{
 	font-size:48px;
 	margin:30px 0 30px 0;
+}
+
+h3{
+	font-size: 18px;
+	font-weight: bold;
+	color: #ee3a23;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
 // index css

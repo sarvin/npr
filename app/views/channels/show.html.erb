@@ -7,7 +7,7 @@
   <%- index += 1 -%>
   <div class="col-xs-12 col-sm-6 col-md-4">
     <div class="music-box">
-      <p><%= story['song'][0]['album']['albumArtist']['$text'] %></p>
+      <h3><%= story['song'][0]['album']['albumArtist']['$text'] %></h3>
       <% if story['image'][0]['src'] %>
         <p><%= image_tag story['image'][0]['src'].sub(' ', '%20'), width: '250' %></p>
       <% elsif story['thumbnail']['large']['$text'] %>
