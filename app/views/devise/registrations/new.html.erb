@@ -1,3 +1,20 @@
+<% content_for :body do %>
+  <body id='login'>
+<% end %>
+
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12">
+    <h1 class="login-logo">NPR-O-MATIC</h1>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  
+  
+    <div class="login-box">
+
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -26,4 +43,20 @@
   </div>
 <% end %>
 
+
+
+
+   </div>
+
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 login-links">
+
 <%= render "devise/shared/links" %>
+
+  </div>
+</div>
